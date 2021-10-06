@@ -48,7 +48,8 @@ jobs:
           
             #Now we have got the access of EC2 and we will start the deploy .
             cd /home/ubuntu/ &&
-            git clone https://github.com/Shoaib720/github-action-CI-CD.git
-            cd github-action-CI-CD
-            npm install
-            node server.js
+            mkdir test
+            #git clone https://github.com/Shoaib720/github-action-CI-CD.git
+            #cd github-action-CI-CD
+            #npm install
+            #node server.js
