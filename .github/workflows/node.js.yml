@@ -48,7 +48,6 @@ jobs:
           
             #Now we have got the access of EC2 and we will start the deploy .
             echo `pwd`
-            cd /home/ubuntu/ &&
             mkdir test
             #git clone https://github.com/Shoaib720/github-action-CI-CD.git
             #cd github-action-CI-CD
