@@ -21,3 +21,18 @@ jobs:
         node-version: ${{matrix.node-version}}
         cache: 'npm'
     - run: npm ci
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy to EC2
+      env:
+        PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
+        HOSTNAME : ${{ secrets.HOSTNAME  }}
+        USERNAME : ${{ secrets.USERNAME  }}
+    - run: echo "$PRIVATE_KEY" > private_key
+    - run: chmod 600 private_key
+    - run: ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME}
+    - run: mkdir excellent
