@@ -37,5 +37,6 @@ jobs:
         echo "$PRIVATE_KEY" > private_key &&
         chmod 600 private_key &&
         ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} &&
+        cd /home/ubuntu
         mkdir excellent &&
         echo `pwd` `whoami`
