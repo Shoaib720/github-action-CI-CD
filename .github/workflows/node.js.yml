@@ -48,5 +48,7 @@ jobs:
         key: ${{ secrets.AWS_PRIVATE_KEY }}
         port: 22
         script: |
-          whoami
-          ls -al
+          cd /home/ubuntu/project
+          git pull ${{ github.repository }}
+          npm ci
+          ../start-node.sh
