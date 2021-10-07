@@ -53,6 +53,6 @@ jobs:
         port: 22
         script: |
           cd /home/ubuntu/project
-          git pull main git@github.com:${{github.repository}}.git
+          git pull git@github.com:${{github.repository}}.git
           npm ci
           ../start-node.sh
