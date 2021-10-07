@@ -34,9 +34,9 @@ jobs:
         HOSTNAME : ${{ secrets.HOSTNAME  }}
         USERNAME : ${{ secrets.USERNAME  }}
       run: |
-        echo "$PRIVATE_KEY" > private_key &&
-        chmod 600 private_key &&
-        ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} &&
-        cd /home/ubuntu
-        sudo mkdir excellent &&
+        echo "$PRIVATE_KEY" > private_key && \
+        chmod 600 private_key && \
+        ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} && \
+        cd /home/ubuntu \
+        sudo mkdir excellent && \
         echo `pwd` `whoami`
