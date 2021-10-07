@@ -55,6 +55,6 @@ jobs:
         port: 22
         script: |
           cd /home/ubuntu/project
-          git pull https://github.com/${{github.repository}}.git
+          git pull origin main
           npm ci
           ../start-node.sh
