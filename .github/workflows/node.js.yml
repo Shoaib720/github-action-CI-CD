@@ -28,7 +28,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: 'main'
+        token: ${{secrets.GH_TOKEN}}
     # - name: Deploy to EC2
+    # hillo
     #   env:
     #     PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
     #     HOSTNAME : ${{ secrets.HOSTNAME  }}
@@ -49,6 +53,6 @@ jobs:
         port: 22
         script: |
           cd /home/ubuntu/project
-          git pull
+          git pull main git@github.com:${{github.repository}}.git
           npm ci
           ../start-node.sh
