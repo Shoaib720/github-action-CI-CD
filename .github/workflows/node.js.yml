@@ -28,11 +28,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        ssh-key: ${{ secrets.AWS_PRIVATE_KEY }}
-        ref: 'main'
-        token: ${{secrets.GH_TOKEN}}
-        ssh-strict: false
     # - name: Deploy to EC2
     # hillo
     #   env:
