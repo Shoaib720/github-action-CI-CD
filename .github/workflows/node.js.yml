@@ -38,5 +38,5 @@ jobs:
         chmod 600 private_key &&
         ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOSTNAME} &&
         cd /home/ubuntu
-        mkdir excellent &&
+        sudo mkdir excellent &&
         echo `pwd` `whoami`
